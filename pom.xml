@@ -13,9 +13,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>17</java.version>
 		<shiro.version>1.13.0</shiro.version>
-		<shiro-biz.version>2.0.0.RELEASE</shiro-biz.version>
-		<shiro-jwt-extension.version>1.0.0.RELEASE</shiro-jwt-extension.version>
-		<dingtalk-extension.version>1.0.2-SNAPSHOT</dingtalk-extension.version>
+		<shiro-biz.version>2.0.x.20260630-SNAPSHOT</shiro-biz.version>
+		<shiro-jwt-extension.version>2.0.x.20260630-SNAPSHOT</shiro-jwt-extension.version>
+		<dingtalk-extension.version>2.0.x.20260630-SNAPSHOT</dingtalk-extension.version>
 		<spring.version>5.3.30</spring.version>
 	</properties>
 
@@ -33,7 +33,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.github.easy4j</groupId>
-			<artifactId>dingtalk-extension</artifactId>
+			<artifactId>dingtalk-sdk-extension</artifactId>
 			<version>${dingtalk-extension.version}</version>
 		</dependency>
 		<dependency>
