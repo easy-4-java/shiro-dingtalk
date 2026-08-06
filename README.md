@@ -1,10 +1,10 @@
 # shiro-dingtalk-extension
 
-![Java](https://img.shields.io/badge/Java-21-orange) ![License](https://img.shields.io/badge/License-Apache%202.0-blue)
+[English](./README.md) | [简体中文](./README.zh-CN.md)
 
 DingTalk (钉钉) authentication extension for Apache Shiro. It brings scan-code (扫码登录), mini-app (小程序) and temporary-code (临时授权码) login flows into Shiro, with dedicated authentication filters, tokens, realms and a JWT-backed success handler — built on `shiro-biz`, `shiro-jwt-extension` and `dingtalk-sdk-extension`.
 
-## Table of Contents
+## 目录
 
 - [1. Project Overview](#1-project-overview)
 - [2. Features & Status](#2-features--status)
