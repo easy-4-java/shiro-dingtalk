@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 (https://github.com/hiwepy).
+ * Copyright (c) 2018 (https://github.com/loong10k).
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -18,7 +18,7 @@ package org.apache.shiro.spring.boot.dingtalk.exception;
 import org.apache.shiro.authc.AuthenticationException;
 
 /**
- * @author <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class DingTalkCodeNotFoundException extends AuthenticationException {
 
