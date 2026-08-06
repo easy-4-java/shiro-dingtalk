@@ -50,9 +50,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <shiro.version>1.13.0</shiro.version>
-        <shiro-biz.version>1.0.x.20260630-SNAPSHOT</shiro-biz.version>
-        <shiro-jwt-extension.version>1.0.x.20260630-SNAPSHOT</shiro-jwt-extension.version>
-        <dingtalk-extension.version>1.0.x.20260630-SNAPSHOT</dingtalk-extension.version>
+        <easy4j-shiro-biz.version>1.0.x.20260630-SNAPSHOT</easy4j-shiro-biz.version>
+        <easy4j-shiro-jwt-extension.version>1.0.x.20260630-SNAPSHOT</easy4j-shiro-jwt-extension.version>
+        <easy4j-dingtalk-sdk-extension.version>1.0.x.20260630-SNAPSHOT</easy4j-dingtalk-sdk-extension.version>
         <spring.version>5.3.30</spring.version>
         <jackson.version>2.17.2</jackson.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
@@ -80,19 +80,19 @@
             <dependency>
                 <groupId>io.github.easy4j</groupId>
                 <artifactId>dingtalk-sdk-extension</artifactId>
-                <version>${dingtalk-extension.version}</version>
+                <version>${easy4j-dingtalk-sdk-extension.version}</version>
             </dependency>
             <!-- For Easy4j Shiro Jwt -->
             <dependency>
                 <groupId>io.github.easy4j</groupId>
                 <artifactId>shiro-jwt-extension</artifactId>
-                <version>${shiro-jwt-extension.version}</version>
+                <version>${easy4j-shiro-jwt-extension.version}</version>
             </dependency>
             <!-- For Easy4j Shiro -->
             <dependency>
                 <groupId>io.github.easy4j</groupId>
                 <artifactId>shiro-biz</artifactId>
-                <version>${shiro-biz.version}</version>
+                <version>${easy4j-shiro-biz.version}</version>
             </dependency>
             <!-- For Shiro -->
             <dependency>
