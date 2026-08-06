@@ -2,8 +2,6 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-![Java](https://img.shields.io/badge/Java-8-orange) ![License](https://img.shields.io/badge/License-Apache%202.0-blue)
-
 Apache Shiro 的钉钉认证扩展。它将扫码登录、小程序免登与临时授权码登录三种流程接入 Shiro，提供专属认证过滤器、Token、Realm 与基于 JWT 的成功处理器——构建于 `shiro-biz`、`shiro-jwt-extension` 与 `dingtalk-sdk-extension` 之上。
 
 ## 目录
