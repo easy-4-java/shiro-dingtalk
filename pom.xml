@@ -48,7 +48,7 @@
         <java.version>1.8</java.version>
         <shiro.version>1.13.0</shiro.version>
         <easy4j-shiro-extension.version>1.0.x.20260630-SNAPSHOT</easy4j-shiro-extension.version>
-        <easy4j-shiro-jwt-extension.version>1.0.x.20260630-SNAPSHOT</easy4j-shiro-jwt-extension.version>
+        <easy4j-shiro-jwt.version>1.0.x.20260630-SNAPSHOT</easy4j-shiro-jwt.version>
         <easy4j-dingtalk-sdk-extension.version>1.0.x.20260630-SNAPSHOT</easy4j-dingtalk-sdk-extension.version>
         <spring.version>5.3.30</spring.version>
         <jackson.version>2.17.2</jackson.version>
@@ -78,8 +78,8 @@
             </dependency>
             <dependency>
                 <groupId>io.github.easy4j</groupId>
-                <artifactId>shiro-jwt-extension</artifactId>
-                <version>${easy4j-shiro-jwt-extension.version}</version>
+                <artifactId>shiro-jwt-spring</artifactId>
+                <version>${easy4j-shiro-jwt.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.easy4j</groupId>
