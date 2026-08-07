@@ -1,10 +1,10 @@
-# shiro-dingtalk-extension
+# shiro-dingtalk
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-[![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/shiro-dingtalk-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+[![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/shiro-dingtalk) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
-DingTalk (钉钉) authentication extension for Apache Shiro. It brings scan-code (扫码登录), mini-app (小程序) and temporary-code (临时授权码) login flows into Shiro, with dedicated authentication filters, tokens, realms and a JWT-backed success handler — built on `shiro-biz`, `shiro-jwt-extension` and `dingtalk-sdk-extension`.
+DingTalk (钉钉) authentication integration for Apache Shiro, split into a framework-neutral core module and a Spring integration module. It is built on `shiro-extension`, `shiro-jwt-extension` and `dingtalk-sdk-extension`.
 
 ## 目录
 
@@ -24,7 +24,7 @@ DingTalk (钉钉) authentication extension for Apache Shiro. It brings scan-code
 
 **What it is**
 
-`shiro-dingtalk-extension` integrates DingTalk login into Shiro-based applications:
+`shiro-dingtalk` integrates DingTalk login into Shiro-based applications:
 
 - **Scan-code login** (`DingTalkScanCodeAuthenticatingFilter` / `DingTalkScanCodeAuthorizingRealm`) — enterprise scan-to-login flows.
 - **Mini-app login** (`DingTalkMaAuthenticatingFilter` / `DingTalkMaAuthorizingRealm`) — DingTalk personal mini-app authentication.
@@ -59,7 +59,7 @@ After successful authentication, `DingTalkAuthenticationSuccessHandler` can prod
 | Business exceptions | Available | `DingTalkCodeNotFoundException`, `DingTalkCodeExpiredException`, `DingTalkCodeIncorrectException`, `DingTalkAuthenticationServiceException`. |
 | Configuration property beans | Available | `ShiroDingTalkLoginProperties` (appId/appSecret), `ShiroDingTalkCropAppProperties`, `ShiroDingTalkPersonalMiniAppProperties`, `ShiroDingTalkSuiteProperties`. |
 
-> Status is reported as of `2.0.x.x.20260630-SNAPSHOT` on the `feature/2.0.x` branch.
+> Status is reported as of `2.0.x.20260630-SNAPSHOT` on the `feature/2.0.x` branch.
 
 ## 3. Requirements & Compatibility
 
@@ -67,9 +67,9 @@ After successful authentication, `DingTalkAuthenticationSuccessHandler` can prod
 | :--- | :--- |
 | JDK | 17+ |
 | Maven | 3.0+ (Maven Wrapper 3.5.0 bundled) |
-| Apache Shiro | 1.13.0 (`shiro-core`, `shiro-web`) |
+| Apache Shiro | 2.2.1 (`shiro-core`, `shiro-web`) |
 | Jackson | 2.17.2 (`jackson-databind`, `jackson-annotations`) |
-| easy4j dependencies | `shiro-biz`, `shiro-jwt-extension`, `dingtalk-sdk-extension` (all `2.0.x.x.20260630-SNAPSHOT`) |
+| easy4j dependencies | `shiro-extension-core`, `shiro-extension-spring`, `shiro-jwt-extension`, `dingtalk-sdk-extension` (all `2.0.x.20260630-SNAPSHOT`) |
 
 **Version lines**
 
@@ -105,35 +105,31 @@ After successful authentication, `DingTalkAuthenticationSuccessHandler` can prod
  JWT login state -> Subject
 ```
 
-This is a **single-module** project (packaging `jar`), all classes under `org.apache.shiro.spring.boot.dingtalk`:
+This is a Maven aggregator with two modules. Existing Java package names remain unchanged for source compatibility:
 
-| Package | Role |
+| Module | Role |
 | :--- | :--- |
-| `authc` | Authentication filters and login request models for the three login modes |
-| `realm` | Realms that exchange the DingTalk credentials via `DingTalkTemplate` |
-| `token` | `DingTalk*AuthenticationToken` classes |
-| `exception` | DingTalk-specific authentication exceptions |
-| `property` | Configuration property beans (appId/appSecret/suite/mini-app) |
-| root | `ShiroDingTalkPrincipal`, `DingTalkAuthenticationSuccessHandler` |
+| `shiro-dingtalk-core` | Login request models, authentication tokens, exceptions and configuration beans; no Spring API dependency. |
+| `shiro-dingtalk-spring` | DingTalk principal, Spring web authentication filters, JWT success handler and DingTalk realms; depends on `shiro-dingtalk-core`. |
 
 ## 5. Installation
 
-The artifact is not yet published to Maven Central. Resolve it from the project's configured artifact repository (Aliyun Packages) or install it locally from source; the snapshot version currently used on the `feature/2.0.x` branch is `2.0.x.x.20260630-SNAPSHOT`.
+The artifacts are published to the configured Aliyun snapshot repository. Most applications should depend on the Spring module; the core module is available for framework-neutral models and tokens.
 
 **Maven**
 
 ```xml
 <dependency>
     <groupId>io.github.easy4j</groupId>
-    <artifactId>shiro-dingtalk-extension</artifactId>
-    <version>2.0.x.x.20260630-SNAPSHOT</version>
+    <artifactId>shiro-dingtalk-spring</artifactId>
+    <version>2.0.x.20260630-SNAPSHOT</version>
 </dependency>
 ```
 
 **Gradle**
 
 ```groovy
-implementation 'io.github.easy4j:shiro-dingtalk-extension:2.0.x.x.20260630-SNAPSHOT'
+implementation 'io.github.easy4j:shiro-dingtalk-spring:2.0.x.20260630-SNAPSHOT'
 ```
 
 ## 6. Quick Start
@@ -219,6 +215,6 @@ Maintenance strategy: the 1.0.x line keeps JDK 8 compatibility for legacy deploy
 
 ## 11. Contributing & License
 
-Contributions are welcome — please open an issue or a pull request on the [GitHub repository](https://github.com/easy-4-java/shiro-dingtalk-extension).
+Contributions are welcome — please open an issue or a pull request on the [GitHub repository](https://github.com/easy-4-java/shiro-dingtalk).
 
 This project is licensed under the **Apache License 2.0**. See [LICENSE](LICENSE) for details.
