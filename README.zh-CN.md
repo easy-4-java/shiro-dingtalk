@@ -1,10 +1,10 @@
-# shiro-dingtalk-extension
+# shiro-dingtalk
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-[![Java](https://img.shields.io/badge/Java-8-orange)](https://github.com/easy-4-java/shiro-dingtalk-extension) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+[![Java](https://img.shields.io/badge/Java-8-orange)](https://github.com/easy-4-java/shiro-dingtalk) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
-Apache Shiro 的钉钉认证扩展。它将扫码登录、小程序免登与临时授权码登录三种流程接入 Shiro，提供专属认证过滤器、Token、Realm 与基于 JWT 的成功处理器——构建于 `shiro-biz`、`shiro-jwt-extension` 与 `dingtalk-sdk-extension` 之上。
+Apache Shiro 的钉钉认证集成，拆分为与 Spring 解耦的核心模块和 Spring 集成模块，构建于 `shiro-extension`、`shiro-jwt-extension` 与 `dingtalk-sdk-extension` 之上。
 
 ## 目录
 
@@ -24,7 +24,7 @@ Apache Shiro 的钉钉认证扩展。它将扫码登录、小程序免登与临�
 
 **是什么**
 
-`shiro-dingtalk-extension` 将钉钉登录集成到基于 Shiro 的应用中：
+`shiro-dingtalk` 将钉钉登录集成到基于 Shiro 的应用中：
 
 - **扫码登录**（`DingTalkScanCodeAuthenticatingFilter` / `DingTalkScanCodeAuthorizingRealm`）——企业扫码登录流程。
 - **小程序免登**（`DingTalkMaAuthenticatingFilter` / `DingTalkMaAuthorizingRealm`）——钉钉个人小程序认证。
@@ -69,7 +69,7 @@ Apache Shiro 的钉钉认证扩展。它将扫码登录、小程序免登与临�
 | Maven | 3.0+（内置 Maven Wrapper 3.5.0） |
 | Apache Shiro | 1.13.0（`shiro-core`、`shiro-web`） |
 | Jackson | 2.17.2（`jackson-databind`、`jackson-annotations`） |
-| easy4j 依赖 | `shiro-biz`、`shiro-jwt-extension`、`dingtalk-sdk-extension`（均为 `1.0.x.20260630-SNAPSHOT`） |
+| easy4j 依赖 | `shiro-extension-core`、`shiro-extension-spring`、`shiro-jwt-extension`、`dingtalk-sdk-extension`（均为 `1.0.x.20260630-SNAPSHOT`） |
 
 **版本线**
 
@@ -105,27 +105,23 @@ Apache Shiro 的钉钉认证扩展。它将扫码登录、小程序免登与临�
  JWT 登录态 -> Subject
 ```
 
-本项目为**单模块**工程（packaging 为 `jar`），全部类位于 `org.apache.shiro.spring.boot.dingtalk` 包下：
+本项目是包含两个模块的 Maven 聚合工程。为保持源码兼容，现有 Java 包名不变：
 
-| 包 | 职责 |
+| 模块 | 职责 |
 | :--- | :--- |
-| `authc` | 三种登录模式的认证过滤器与登录请求模型 |
-| `realm` | 通过 `DingTalkTemplate` 完成钉钉凭证交换的 Realm |
-| `token` | `DingTalk*AuthenticationToken` 类 |
-| `exception` | 钉钉专属认证异常 |
-| `property` | 配置属性 Bean（appId/appSecret/套件/小程序） |
-| 根包 | `ShiroDingTalkPrincipal`、`DingTalkAuthenticationSuccessHandler` |
+| `shiro-dingtalk-core` | 登录请求模型、认证 Token、异常和配置 Bean；不依赖 Spring API。 |
+| `shiro-dingtalk-spring` | 钉钉主体、Spring Web 认证过滤器、JWT 成功处理器和钉钉 Realm；单向依赖 `shiro-dingtalk-core`。 |
 
 ## 5. Installation
 
-该构件尚未发布到 Maven Central。请从项目配置的制品仓库（阿里云制品仓库）获取，或从源码本地安装；`feature/1.0.x` 分支当前使用的快照版本为 `1.0.x.20260630-SNAPSHOT`。
+构件发布到项目配置的阿里云快照仓库。普通 Spring 应用应依赖 Spring 模块；只使用模型和 Token 时可单独依赖核心模块。
 
 **Maven**
 
 ```xml
 <dependency>
     <groupId>io.github.easy4j</groupId>
-    <artifactId>shiro-dingtalk-extension</artifactId>
+    <artifactId>shiro-dingtalk-spring</artifactId>
     <version>1.0.x.20260630-SNAPSHOT</version>
 </dependency>
 ```
@@ -133,7 +129,7 @@ Apache Shiro 的钉钉认证扩展。它将扫码登录、小程序免登与临�
 **Gradle**
 
 ```groovy
-implementation 'io.github.easy4j:shiro-dingtalk-extension:1.0.x.20260630-SNAPSHOT'
+implementation 'io.github.easy4j:shiro-dingtalk-spring:1.0.x.20260630-SNAPSHOT'
 ```
 
 ## 6. Quick Start
@@ -219,6 +215,6 @@ DingTalkAuthenticationSuccessHandler successHandler =
 
 ## 11. Contributing & License
 
-欢迎参与贡献——请在 [GitHub 仓库](https://github.com/easy-4-java/shiro-dingtalk-extension) 提交 Issue 或 Pull Request。
+欢迎参与贡献——请在 [GitHub 仓库](https://github.com/easy-4-java/shiro-dingtalk) 提交 Issue 或 Pull Request。
 
 本项目基于 **Apache License 2.0** 开源。详见 [LICENSE](LICENSE)。
