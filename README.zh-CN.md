@@ -4,7 +4,7 @@
 
 [![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/shiro-dingtalk) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
-Apache Shiro 的钉钉认证集成，拆分为与 Spring 解耦的核心模块和 Spring 集成模块，构建于 `shiro-extension`、`shiro-jwt-extension` 与 `dingtalk-sdk-extension` 之上。
+Apache Shiro 的钉钉认证集成，拆分为与 Spring 解耦的核心模块和 Spring 集成模块，构建于 `shiro-extension`、`shiro-jwt-spring` 与 `dingtalk-sdk-extension` 之上。
 
 ## 目录
 
@@ -30,7 +30,7 @@ Apache Shiro 的钉钉认证集成，拆分为与 Spring 解耦的核心模块�
 - **小程序免登**（`DingTalkMaAuthenticatingFilter` / `DingTalkMaAuthorizingRealm`）——钉钉个人小程序认证。
 - **临时授权码登录**（`DingTalkTmpCodeAuthenticatingFilter` / `DingTalkTempCodeAuthorizingRealm`）——使用临时授权码登录。
 
-认证成功后，`DingTalkAuthenticationSuccessHandler` 可通过 `JwtPayloadRepository`（来自 `shiro-jwt-extension`）下发 JWT 登录态；认证主体为携带钉钉用户资料字段的 `ShiroDingTalkPrincipal`。
+认证成功后，`DingTalkAuthenticationSuccessHandler` 可通过 `JwtPayloadRepository`（来自 `shiro-jwt-spring`）下发 JWT 登录态；认证主体为携带钉钉用户资料字段的 `ShiroDingTalkPrincipal`。
 
 **不是什么**
 
@@ -69,7 +69,7 @@ Apache Shiro 的钉钉认证集成，拆分为与 Spring 解耦的核心模块�
 | Maven | 3.0+（内置 Maven Wrapper 3.5.0） |
 | Apache Shiro | 2.2.1（`shiro-core`、`shiro-web`） |
 | Jackson | 2.17.2（`jackson-databind`、`jackson-annotations`） |
-| easy4j 依赖 | `shiro-extension-core`、`shiro-extension-spring`、`shiro-jwt-extension`、`dingtalk-sdk-extension`（均为 `2.0.x.20260630-SNAPSHOT`） |
+| easy4j 依赖 | `shiro-extension-core`、`shiro-extension-spring`、`shiro-jwt-spring`、`dingtalk-sdk-extension`（均为 `2.0.x.20260630-SNAPSHOT`） |
 
 **版本线**
 
@@ -100,7 +100,7 @@ Apache Shiro 的钉钉认证集成，拆分为与 Spring 解耦的核心模块�
         |
         v
  DingTalkAuthenticationSuccessHandler
-        |  JwtPayloadRepository（shiro-jwt-extension）
+        |  JwtPayloadRepository（shiro-jwt-spring）
         v
  JWT 登录态 -> Subject
 ```
