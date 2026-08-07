@@ -109,8 +109,8 @@ This is a Maven aggregator with two modules. Existing Java package names remain 
 
 | Module | Role |
 | :--- | :--- |
-| `shiro-dingtalk-core` | Principal, login request models, authentication tokens, exceptions and configuration beans; no Spring API dependency. |
-| `shiro-dingtalk-spring` | Spring web authentication filters, JWT success handler and DingTalk realms; depends on `shiro-dingtalk-core`. |
+| `shiro-dingtalk-core` | Login request models, authentication tokens, exceptions and configuration beans; no Spring API dependency. |
+| `shiro-dingtalk-spring` | DingTalk principal, Spring web authentication filters, JWT success handler and DingTalk realms; depends on `shiro-dingtalk-core`. |
 
 ## 5. Installation
 

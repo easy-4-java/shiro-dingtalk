@@ -6,7 +6,7 @@
 
     <groupId>io.github.easy4j</groupId>
     <artifactId>shiro-dingtalk</artifactId>
-    <version>${revision}</version>
+    <version>3.0.x.20260630-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Apache Shiro DingTalk authentication extensions</description>
@@ -140,7 +140,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>${java.version}</release>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                     <parameters>true</parameters>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <annotationProcessorPaths>

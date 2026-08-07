@@ -109,8 +109,8 @@ Apache Shiro 的钉钉认证集成，拆分为与 Spring 解耦的核心模块�
 
 | 模块 | 职责 |
 | :--- | :--- |
-| `shiro-dingtalk-core` | 主体、登录请求模型、认证 Token、异常和配置 Bean；不依赖 Spring API。 |
-| `shiro-dingtalk-spring` | Spring Web 认证过滤器、JWT 成功处理器和钉钉 Realm；单向依赖 `shiro-dingtalk-core`。 |
+| `shiro-dingtalk-core` | 登录请求模型、认证 Token、异常和配置 Bean；不依赖 Spring API。 |
+| `shiro-dingtalk-spring` | 钉钉主体、Spring Web 认证过滤器、JWT 成功处理器和钉钉 Realm；单向依赖 `shiro-dingtalk-core`。 |
 
 ## 5. Installation
 
