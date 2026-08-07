@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>io.github.easy4j</groupId>
-            <artifactId>shiro-jwt-extension</artifactId>
+            <artifactId>shiro-jwt-spring</artifactId>
         </dependency>
         <dependency>
             <groupId>io.github.easy4j</groupId>

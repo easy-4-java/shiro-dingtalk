@@ -4,7 +4,7 @@
 
 [![Java](https://img.shields.io/badge/Java-21-orange)](https://github.com/easy-4-java/shiro-dingtalk) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
-DingTalk (钉钉) authentication integration for Apache Shiro, split into a framework-neutral core module and a Spring integration module. It is built on `shiro-extension`, `shiro-jwt-extension` and `dingtalk-sdk-extension`.
+DingTalk (钉钉) authentication integration for Apache Shiro, split into a framework-neutral core module and a Spring integration module. It is built on `shiro-extension`, `shiro-jwt-spring` and `dingtalk-sdk-extension`.
 
 ## 目录
 
@@ -30,7 +30,7 @@ DingTalk (钉钉) authentication integration for Apache Shiro, split into a fram
 - **Mini-app login** (`DingTalkMaAuthenticatingFilter` / `DingTalkMaAuthorizingRealm`) — DingTalk personal mini-app authentication.
 - **Temporary-code login** (`DingTalkTmpCodeAuthenticatingFilter` / `DingTalkTempCodeAuthorizingRealm`) — login with a temporary authorization code.
 
-After successful authentication, `DingTalkAuthenticationSuccessHandler` can produce a JWT login state through `JwtPayloadRepository` (from `shiro-jwt-extension`), and the authenticated principal is a `ShiroDingTalkPrincipal` carrying DingTalk user profile fields.
+After successful authentication, `DingTalkAuthenticationSuccessHandler` can produce a JWT login state through `JwtPayloadRepository` (from `shiro-jwt-spring`), and the authenticated principal is a `ShiroDingTalkPrincipal` carrying DingTalk user profile fields.
 
 **What it is not**
 
@@ -69,7 +69,7 @@ After successful authentication, `DingTalkAuthenticationSuccessHandler` can prod
 | Maven | 3.0+ (Maven Wrapper 3.5.0 bundled) |
 | Apache Shiro | 1.13.0 (`shiro-core`, `shiro-web`) |
 | Jackson | 2.17.2 (`jackson-databind`, `jackson-annotations`) |
-| easy4j dependencies | `shiro-extension-core`, `shiro-extension-spring`, `shiro-jwt-extension`, `dingtalk-sdk-extension` (all `3.0.x.20260630-SNAPSHOT`) |
+| easy4j dependencies | `shiro-extension-core`, `shiro-extension-spring`, `shiro-jwt-spring`, `dingtalk-sdk-extension` (all `3.0.x.20260630-SNAPSHOT`) |
 
 **Version lines**
 
@@ -100,7 +100,7 @@ After successful authentication, `DingTalkAuthenticationSuccessHandler` can prod
         |
         v
  DingTalkAuthenticationSuccessHandler
-        |  JwtPayloadRepository (shiro-jwt-extension)
+        |  JwtPayloadRepository (shiro-jwt-spring)
         v
  JWT login state -> Subject
 ```
