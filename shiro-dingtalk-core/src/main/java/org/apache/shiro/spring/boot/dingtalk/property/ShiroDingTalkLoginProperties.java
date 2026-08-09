@@ -5,7 +5,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * 	移动接入应用：扫码登录配置
+ * Configuration properties for DingTalk mobile access application scan-code login.
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
  */
 @Getter
@@ -14,11 +15,11 @@ import lombok.ToString;
 public class ShiroDingTalkLoginProperties {
 
 	/**
-	 * 	移动接入应用-扫码登录应用的appId
+	 * Application ID for the mobile-access scan-code login.
 	 */
 	private String appId;
 	/**
-	 * 	移动接入应用-扫码登录应用的appSecret
+	 * Application secret for the mobile-access scan-code login.
 	 */
 	private String appSecret;
 

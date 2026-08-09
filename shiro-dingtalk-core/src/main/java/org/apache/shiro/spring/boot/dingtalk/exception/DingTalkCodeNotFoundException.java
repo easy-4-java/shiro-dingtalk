@@ -18,6 +18,8 @@ package org.apache.shiro.spring.boot.dingtalk.exception;
 import org.apache.shiro.authc.AuthenticationException;
 
 /**
+ * Exception thrown when the DingTalk authorization code is missing or not found in the request.
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class DingTalkCodeNotFoundException extends AuthenticationException {

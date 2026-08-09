@@ -22,6 +22,15 @@ import org.springframework.util.StringUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Base authenticating filter for all DingTalk login flows.
+ *
+ * <p>Handles stateless session access, login request detection and JSON error
+ * responses. Subclasses must implement {@link #createDingTalkToken(ServletRequest)}
+ * to produce the appropriate DingTalk authentication token.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
 abstract class AbstractDingTalkAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractDingTalkAuthenticatingFilter.class);

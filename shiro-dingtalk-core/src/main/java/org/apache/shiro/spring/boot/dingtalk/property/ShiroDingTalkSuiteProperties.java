@@ -5,7 +5,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * 	第三方企业应用：小程序、H5配置
+ * Configuration properties for DingTalk third-party enterprise application (mini-app / H5).
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
  */
 @Getter
@@ -14,19 +15,19 @@ import lombok.ToString;
 public class ShiroDingTalkSuiteProperties {
 
 	/**
-	 * 	第三方企业应用：程序客户端ID
+	 * Suite ID for the third-party enterprise application.
 	 */
 	private String suiteId;
 	/**
-	 * 	第三方企业应用：应用的唯一标识key
+	 * Application ID for the third-party enterprise application.
 	 */
 	private String appId;
 	/**
-	 * 	第三方企业应用：应用的唯一标识key
+	 * Suite key (unique identifier) for the third-party enterprise application.
 	 */
 	private String suiteKey;
 	/**
-	 *	第三方企业应用：应用的密钥
+	 * Suite secret for the third-party enterprise application.
 	 */
 	private String suiteSecret;
 

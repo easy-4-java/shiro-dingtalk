@@ -18,6 +18,16 @@ import org.springframework.util.StringUtils;
 import com.dingtalk.spring.boot.DingTalkTemplate;
 import com.taobao.api.ApiException;
 
+/**
+ * Shiro authorizing realm for DingTalk Mini-Application (MA) authentication.
+ *
+ * <p>Validates the application key, exchanges the authorization code for an access
+ * token via {@link DingTalkTemplate}, and delegates to the authentication repository
+ * to build the {@link AuthenticationInfo}. Notifies registered realm listeners on
+ * success or failure.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
 public class DingTalkMaAuthorizingRealm extends AbstractAuthorizingRealm {
 
 	private static final Logger LOG = LoggerFactory.getLogger(DingTalkMaAuthorizingRealm.class);

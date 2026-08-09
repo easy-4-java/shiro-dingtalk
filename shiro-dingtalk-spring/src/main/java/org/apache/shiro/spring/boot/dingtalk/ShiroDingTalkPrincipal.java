@@ -5,6 +5,14 @@ import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Shiro principal that holds DingTalk user profile attributes after successful authentication.
+ *
+ * <p>Extends {@link ShiroPrincipal} with DingTalk-specific fields such as unionid,
+ * mobile, email, department, avatar, admin/boss flags and other employee metadata.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
 @Getter
 @Setter
 @SuppressWarnings("serial")
