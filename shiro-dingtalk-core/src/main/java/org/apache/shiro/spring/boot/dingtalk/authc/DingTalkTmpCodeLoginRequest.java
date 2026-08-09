@@ -5,26 +5,32 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * 企业内部应用免登、第三方企业应用免登、应用管理后台免登
+ * Login request payload for DingTalk temporary-code (free-login) authentication.
+ *
+ * <p>Supports three scenarios: enterprise internal application free-login,
+ * third-party enterprise application free-login and application management
+ * console free-login. The client sends the application key, a temporary code
+ * and an optional binding token.</p>
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DingTalkTmpCodeLoginRequest {
 
 	/**
-	 * 	应用的唯一标识key
+	 * Unique application identifier key (appKey or appId).
 	 */
 	protected String key;
 	/**
-	 * 临时登录凭证code
+	 * Temporary authorization code for free-login scenarios.
 	 */
 	protected String code;
 	/**
-	 * 	当前请求使用的token，用于绑定用户
+	 * Current request token used for binding the authenticated user.
 	 */
 	protected String token;
 	/**
-	 * Access Token
+	 * Access token obtained by exchanging the temporary code.
 	 */
 	protected String accessToken;
 

@@ -26,6 +26,15 @@ import org.springframework.http.MediaType;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Authentication success handler for DingTalk login flows.
+ *
+ * <p>After a successful DingTalk authentication, this handler issues a JWT token
+ * (if a {@link JwtPayloadRepository} is configured) and writes the token map as
+ * a JSON response to the client.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
 public class DingTalkAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
 	private static final Logger LOG = LoggerFactory.getLogger(DingTalkAuthenticationSuccessHandler.class);

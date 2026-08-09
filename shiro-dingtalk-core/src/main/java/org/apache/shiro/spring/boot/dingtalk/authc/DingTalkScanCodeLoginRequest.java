@@ -5,22 +5,27 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * 第三方系统钉钉扫码登录授权
+ * Login request payload for DingTalk scan-code (QR code) authentication.
+ *
+ * <p>Used in third-party system integrations where the user scans a DingTalk
+ * QR code to authenticate. The client provides the application key, a binding
+ * token and a temporary login code returned by the DingTalk scan callback.</p>
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DingTalkScanCodeLoginRequest {
 
 	/**
-	 * 	应用的唯一标识key
+	 * Unique application identifier key (appKey or appId).
 	 */
 	protected String key;
 	/**
-	 * 	当前请求使用的token，用于绑定用户
+	 * Current request token used for binding the authenticated user.
 	 */
 	protected String token;
 	/**
-	 * 临时登录凭证code
+	 * Temporary login code returned by the DingTalk scan-code callback.
 	 */
 	protected String loginTmpCode;
 

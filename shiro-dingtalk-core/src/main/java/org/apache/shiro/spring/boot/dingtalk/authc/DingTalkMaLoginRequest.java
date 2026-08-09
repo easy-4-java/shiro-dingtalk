@@ -4,23 +4,33 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Login request payload for DingTalk Mini-Application (MA) authentication.
+ *
+ * <p>Used when a DingTalk mini-application performs a silent login (enterprise
+ * internal application or third-party enterprise application). The client sends
+ * the application key, a temporary authorization code and an optional binding
+ * token; the server exchanges the code for an access token via the DingTalk API.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DingTalkMaLoginRequest {
 
 	/**
-	 * 应用的唯一标识key
+	 * Unique application identifier key (appKey or appId).
 	 */
 	protected String key;
 	/**
-	 * 临时登录凭证code
+	 * Temporary authorization code obtained from the DingTalk runtime.
 	 */
 	protected String authCode;
 	/**
-	 * 	当前请求使用的token，用于绑定用户
+	 * Current request token used for binding the authenticated user.
 	 */
 	protected String token;
 	/**
-	 * Access Token
+	 * Access token obtained by exchanging the authorization code.
 	 */
 	protected String accessToken;
 

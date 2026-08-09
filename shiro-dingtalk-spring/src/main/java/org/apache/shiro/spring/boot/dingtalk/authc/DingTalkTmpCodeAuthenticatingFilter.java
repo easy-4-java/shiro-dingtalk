@@ -4,6 +4,15 @@ import org.apache.shiro.spring.boot.dingtalk.token.DingTalkTmpCodeAuthentication
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Authenticating filter for DingTalk temporary-code (free-login) requests.
+ *
+ * <p>Extracts the application key, binding token and temporary code from the
+ * HTTP request (either as JSON body or form parameters) and creates a
+ * {@link DingTalkTmpCodeAuthenticationToken} for the Shiro authentication chain.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
 public class DingTalkTmpCodeAuthenticatingFilter extends AbstractDingTalkAuthenticatingFilter {
 
 	public static final String SPRING_SECURITY_FORM_APP_KEY = "key";
