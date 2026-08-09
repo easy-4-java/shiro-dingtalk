@@ -4,6 +4,15 @@ import org.apache.shiro.spring.boot.dingtalk.token.DingTalkScanCodeAuthenticatio
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Authenticating filter for DingTalk scan-code (QR code) login requests.
+ *
+ * <p>Extracts the application key, binding token and temporary login code from the
+ * HTTP request (either as JSON body or form parameters) and creates a
+ * {@link DingTalkScanCodeAuthenticationToken} for the Shiro authentication chain.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
 public class DingTalkScanCodeAuthenticatingFilter extends AbstractDingTalkAuthenticatingFilter {
 
 	public static final String SPRING_SECURITY_FORM_APP_KEY = "key";

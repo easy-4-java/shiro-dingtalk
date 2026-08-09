@@ -20,6 +20,16 @@ import com.dingtalk.api.response.OapiSnsGetuserinfoBycodeResponse.UserInfo;
 import com.dingtalk.spring.boot.DingTalkTemplate;
 import com.taobao.api.ApiException;
 
+/**
+ * Shiro authorizing realm for DingTalk scan-code (QR code) authentication.
+ *
+ * <p>Validates the application key, calls the DingTalk SNS API to retrieve user
+ * info by the temporary login code, populates the token with unionid/openid/userInfo,
+ * and delegates to the authentication repository. Notifies registered realm listeners
+ * on success or failure.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ */
 public class DingTalkScanCodeAuthorizingRealm extends AbstractAuthorizingRealm {
 
 	private static final Logger LOG = LoggerFactory.getLogger(DingTalkScanCodeAuthorizingRealm.class);
