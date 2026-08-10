@@ -1,0 +1,9 @@
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/ShiroDingTalkPrincipal.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/authc/AbstractDingTalkAuthenticatingFilter.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/authc/DingTalkAuthenticationSuccessHandler.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/authc/DingTalkMaAuthenticatingFilter.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/authc/DingTalkScanCodeAuthenticatingFilter.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/authc/DingTalkTmpCodeAuthenticatingFilter.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/realm/DingTalkMaAuthorizingRealm.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/realm/DingTalkScanCodeAuthorizingRealm.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-spring/src/main/java/org/apache/shiro/dingtalk/realm/DingTalkTempCodeAuthorizingRealm.java

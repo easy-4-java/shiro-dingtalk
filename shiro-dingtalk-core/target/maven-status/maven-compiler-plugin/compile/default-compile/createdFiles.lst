@@ -1,0 +1,14 @@
+org/apache/shiro/dingtalk/authc/DingTalkMaLoginRequest.class
+org/apache/shiro/dingtalk/token/DingTalkTmpCodeAuthenticationToken.class
+org/apache/shiro/dingtalk/authc/DingTalkScanCodeLoginRequest.class
+org/apache/shiro/dingtalk/exception/DingTalkAuthenticationServiceException.class
+org/apache/shiro/dingtalk/exception/DingTalkCodeNotFoundException.class
+org/apache/shiro/dingtalk/property/ShiroDingTalkPersonalMiniAppProperties.class
+org/apache/shiro/dingtalk/property/ShiroDingTalkCropAppProperties.class
+org/apache/shiro/dingtalk/exception/DingTalkCodeExpiredException.class
+org/apache/shiro/dingtalk/property/ShiroDingTalkLoginProperties.class
+org/apache/shiro/dingtalk/token/DingTalkScanCodeAuthenticationToken.class
+org/apache/shiro/dingtalk/token/DingTalkMaAuthenticationToken.class
+org/apache/shiro/dingtalk/exception/DingTalkCodeIncorrectException.class
+org/apache/shiro/dingtalk/property/ShiroDingTalkSuiteProperties.class
+org/apache/shiro/dingtalk/authc/DingTalkTmpCodeLoginRequest.class

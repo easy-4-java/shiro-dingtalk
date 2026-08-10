@@ -1,0 +1,14 @@
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/authc/DingTalkMaLoginRequest.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/authc/DingTalkScanCodeLoginRequest.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/authc/DingTalkTmpCodeLoginRequest.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/exception/DingTalkAuthenticationServiceException.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/exception/DingTalkCodeExpiredException.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/exception/DingTalkCodeIncorrectException.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/exception/DingTalkCodeNotFoundException.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/property/ShiroDingTalkCropAppProperties.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/property/ShiroDingTalkLoginProperties.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/property/ShiroDingTalkPersonalMiniAppProperties.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/property/ShiroDingTalkSuiteProperties.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/token/DingTalkMaAuthenticationToken.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/token/DingTalkScanCodeAuthenticationToken.java
+/Users/wandl/workspaces/workspace-github-easy-4-java/shiro-dingtalk/shiro-dingtalk-core/src/main/java/org/apache/shiro/dingtalk/token/DingTalkTmpCodeAuthenticationToken.java
