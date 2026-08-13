@@ -46,7 +46,7 @@
             <maven.compiler.release>${java.version}</maven.compiler.release>
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
             <!-- Dependency versions -->
-            <assertj.version>3.27.3</assertj.version>
+            <assertj.version>3.27.7</assertj.version>
             <easy4j-dingtalk-sdk-extension.version>3.0.x.20260630-SNAPSHOT</easy4j-dingtalk-sdk-extension.version>
             <easy4j-shiro-extension.version>3.0.x.20260630-SNAPSHOT</easy4j-shiro-extension.version>
             <easy4j-shiro-jwt.version>3.0.x.20260630-SNAPSHOT</easy4j-shiro-jwt.version>
