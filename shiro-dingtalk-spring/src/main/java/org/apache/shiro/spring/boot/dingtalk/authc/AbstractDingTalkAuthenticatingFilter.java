@@ -20,7 +20,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.util.StringUtils;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.ObjectMapper;
 
 /**
  * Base authenticating filter for all DingTalk login flows.
@@ -97,7 +98,7 @@ abstract class AbstractDingTalkAuthenticatingFilter extends AbstractTrustableAut
 		}
 		try {
 			return objectMapper.readValue(request.getReader(), requestType);
-		} catch (IOException e) {
+		} catch (IOException | JacksonException e) {
 			throw new AuthenticationException(e);
 		}
 	}

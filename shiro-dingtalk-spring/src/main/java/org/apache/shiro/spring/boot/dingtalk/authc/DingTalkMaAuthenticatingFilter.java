@@ -2,7 +2,7 @@ package org.apache.shiro.spring.boot.dingtalk.authc;
 
 import org.apache.shiro.spring.boot.dingtalk.token.DingTalkMaAuthenticationToken;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 
 /**
  * Authenticating filter for DingTalk Mini-Application (MA) login requests.

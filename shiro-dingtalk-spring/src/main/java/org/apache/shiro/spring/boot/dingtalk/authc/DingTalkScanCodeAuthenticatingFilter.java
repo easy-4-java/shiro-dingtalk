@@ -2,7 +2,7 @@ package org.apache.shiro.spring.boot.dingtalk.authc;
 
 import org.apache.shiro.spring.boot.dingtalk.token.DingTalkScanCodeAuthenticationToken;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 
 /**
  * Authenticating filter for DingTalk scan-code (QR code) login requests.

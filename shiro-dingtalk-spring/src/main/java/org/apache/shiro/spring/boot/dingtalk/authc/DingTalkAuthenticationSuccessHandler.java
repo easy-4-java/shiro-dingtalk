@@ -13,18 +13,19 @@ import org.apache.shiro.biz.authc.AuthenticationSuccessHandler;
 import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
 import org.apache.shiro.biz.utils.SubjectUtils;
 import org.apache.shiro.biz.web.servlet.http.HttpStatus;
+import org.apache.shiro.jwt.JwtPayloadRepository;
 import org.apache.shiro.spring.boot.dingtalk.token.DingTalkMaAuthenticationToken;
 import org.apache.shiro.spring.boot.dingtalk.token.DingTalkScanCodeAuthenticationToken;
 import org.apache.shiro.spring.boot.dingtalk.token.DingTalkTmpCodeAuthenticationToken;
-import org.apache.shiro.spring.boot.jwt.JwtPayloadRepository;
-import org.apache.shiro.spring.boot.utils.SubjectJwtUtils;
+import org.apache.shiro.utils.SubjectJwtUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.ObjectMapper;
 
 /**
  * Authentication success handler for DingTalk login flows.
@@ -71,7 +72,7 @@ public class DingTalkAuthenticationSuccessHandler implements AuthenticationSucce
 			response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 			response.setCharacterEncoding(StandardCharsets.UTF_8.toString());
 			objectMapper.writeValue(response.getWriter(), tokenMap);
-		} catch (IOException e) {
+		} catch (IOException | JacksonException e) {
 			LOG.error(e.getMessage(), e);
 		}
 	}

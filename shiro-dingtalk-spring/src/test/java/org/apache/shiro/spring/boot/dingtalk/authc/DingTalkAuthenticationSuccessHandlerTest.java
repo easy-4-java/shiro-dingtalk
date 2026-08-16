@@ -9,7 +9,8 @@ import org.apache.shiro.spring.boot.dingtalk.token.DingTalkTmpCodeAuthentication
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 
 /**
  * Unit tests for {@link DingTalkAuthenticationSuccessHandler}.
@@ -18,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 class DingTalkAuthenticationSuccessHandlerTest {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new JsonMapper();
 
     @Test
     @DisplayName("supports DingTalkMaAuthenticationToken")
