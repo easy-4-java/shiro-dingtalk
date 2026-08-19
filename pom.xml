@@ -41,7 +41,6 @@
         <maven.version>4.0.0-rc-5</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <revision>3.0.x.20260630-SNAPSHOT</revision>
-
         <!-- ═══ Dependency versions（自然排序）═══ -->
         <assertj.version>3.27.7</assertj.version>
         <easy4j-dingtalk-sdk-extension.version>3.0.x.20260630-SNAPSHOT</easy4j-dingtalk-sdk-extension.version>
@@ -55,7 +54,6 @@
         <shiro.version>2.2.1</shiro.version>
         <slf4j.version>2.0.18</slf4j.version>
         <spring.version>5.3.30</spring.version>
-
         <!-- ═══ Maven Plugin versions（自然排序）═══ -->
         <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
@@ -64,7 +62,6 @@
         <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
-    
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -218,9 +215,9 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <argLine>
-                        --add-opens java.base/java.lang=ALL-UNNAMED
-                        --add-opens java.base/java.lang.reflect=ALL-UNNAMED
-                    </argLine>
+                                                --add-opens java.base/java.lang=ALL-UNNAMED
+                                                --add-opens java.base/java.lang.reflect=ALL-UNNAMED
+                                        </argLine>
                 </configuration>
             </plugin>
             <plugin>
