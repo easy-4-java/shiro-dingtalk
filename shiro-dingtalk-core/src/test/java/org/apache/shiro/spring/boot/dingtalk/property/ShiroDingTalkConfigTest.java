@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
  *
  * @author [@Loong Wan](https://github.com/loong10k)
  */
-class ShiroDingTalkPropertiesTest {
+class ShiroDingTalkConfigTest {
 
     @Test
     @DisplayName("ShiroDingTalkCropAppProperties setters and getters")
