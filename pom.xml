@@ -49,13 +49,13 @@
         <easy4j-shiro-extension.version>3.0.x.20260630-SNAPSHOT</easy4j-shiro-extension.version>
         <easy4j-shiro-jwt.version>3.0.x.20260630-SNAPSHOT</easy4j-shiro-jwt.version>
         <jackson-bom.version>3.2.1</jackson-bom.version>
-        <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
+        <servlet-api.version>6.1.0</servlet-api.version>
         <junit-jupiter.version>5.11.4</junit-jupiter.version>
         <lombok.version>1.18.46</lombok.version>
         <mockito.version>4.11.0</mockito.version>
-        <shiro.version>2.2.1</shiro.version>
+        <shiro.version>3.0.2</shiro.version>
         <slf4j.version>2.0.18</slf4j.version>
-        <spring.version>5.3.30</spring.version>
+        <spring.version>7.0.10</spring.version>
         <!-- ═══ Maven Plugin versions（自然排序）═══ -->
         <maven-central-publishing-plugin.version>0.11.0</maven-central-publishing-plugin.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
@@ -67,6 +67,14 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- 统一 Spring 传递依赖，避免 Shiro 引入其他版本线。 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- Jackson BOM (tools.jackson 3.x; annotations stay com.fasterxml 2.x) -->
             <dependency>
                 <groupId>tools.jackson</groupId>
@@ -111,9 +119,9 @@
                 <version>${spring.version}</version>
             </dependency>
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${javax-servlet-api.version}</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
