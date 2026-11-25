@@ -28,7 +28,7 @@ public class DingTalkScanCodeAuthenticatingFilter extends AbstractDingTalkAuthen
 	}
 
 	@Override
-	protected DingTalkScanCodeAuthenticationToken createDingTalkToken(javax.servlet.ServletRequest request) {
+	protected DingTalkScanCodeAuthenticationToken createDingTalkToken(jakarta.servlet.ServletRequest request) {
 		DingTalkScanCodeLoginRequest loginRequest = readObjectRequest(request, DingTalkScanCodeLoginRequest.class);
 		if (java.util.Objects.isNull(loginRequest)) {
 			loginRequest = new DingTalkScanCodeLoginRequest(obtainKey(request), obtainToken(request), obtainCode(request));
@@ -38,15 +38,15 @@ public class DingTalkScanCodeAuthenticatingFilter extends AbstractDingTalkAuthen
 		return new DingTalkScanCodeAuthenticationToken(loginRequest, getHost(request));
 	}
 
-	protected String obtainKey(javax.servlet.ServletRequest request) {
+	protected String obtainKey(jakarta.servlet.ServletRequest request) {
 		return request.getParameter(keyParameter);
 	}
 
-	protected String obtainToken(javax.servlet.ServletRequest request) {
+	protected String obtainToken(jakarta.servlet.ServletRequest request) {
 		return request.getParameter(tokenParameter);
 	}
 
-	protected String obtainCode(javax.servlet.ServletRequest request) {
+	protected String obtainCode(jakarta.servlet.ServletRequest request) {
 		return request.getParameter(codeParameter);
 	}
 
